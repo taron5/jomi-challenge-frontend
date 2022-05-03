@@ -29,8 +29,6 @@ export type ComponentCommonCarouselItemArgs = {
 
 export type ComponentCommonHeader = {
   __typename?: 'ComponentCommonHeader';
-  ButtonLink?: Maybe<Scalars['String']>;
-  ButtonText?: Maybe<Scalars['String']>;
   Text?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
 };
@@ -40,10 +38,16 @@ export type ComponentCommonTwoColumnBlock = {
   ButtonText?: Maybe<Scalars['String']>;
   ButtonUrl?: Maybe<Scalars['String']>;
   Description?: Maybe<Scalars['String']>;
-  Image?: Maybe<UploadFileEntityResponse>;
+  DescriptionHeading?: Maybe<Scalars['String']>;
+  Image?: Maybe<UploadFileRelationResponseCollection>;
   ImagePosition?: Maybe<Enum_Componentcommontwocolumnblock_Imageposition>;
   TitleText?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
+};
+
+
+export type ComponentCommonTwoColumnBlockImageArgs = {
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };
 
 export type ComponentHeroHeroSection = {
@@ -370,6 +374,11 @@ export type UploadFileEntityResponseCollection = {
   __typename?: 'UploadFileEntityResponseCollection';
   data: Array<UploadFileEntity>;
   meta: ResponseCollectionMeta;
+};
+
+export type UploadFileRelationResponseCollection = {
+  __typename?: 'UploadFileRelationResponseCollection';
+  data: Array<UploadFileEntity>;
 };
 
 export type UsersPermissionsCreateRolePayload = {
